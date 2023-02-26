@@ -14,5 +14,22 @@ export const ContactListItems = styled.li`
 export const ContactListItemsData = styled.span`
     :not(:first-child) {
     padding-left: 8px;
+    padding-right: 16px;
 }
+`;
+
+export const ContactListItemsBtn = styled.button`
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border: 1px solid #D3D3D3;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+
+    :hover,
+    :focus {
+        background-color: #B0E0E6;
+    }
 `;

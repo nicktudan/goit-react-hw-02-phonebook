@@ -13,6 +13,7 @@ export const FilterInput = styled.input`
     padding: 4px 8px;
     border: 1px solid #D3D3D3;
     outline: none;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     :hover,
     :focus {

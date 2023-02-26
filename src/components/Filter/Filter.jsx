@@ -14,5 +14,5 @@ Filter.propTypes = {
     filter: PropTypes.arrayOf(PropTypes.shape({
         name: PropTypes.string.isRequired,
     })),
-
+    onChange: PropTypes.func.isRequired,
 };
