@@ -4,7 +4,7 @@ export const ContactsList = styled.ul`
     display: flex;
     flex-direction: column;
     gap: 16px;
-    margin: 20px 0 auto 64px;
+    margin-left: 64px;
 `;
 
 export const ContactListItems = styled.li`
