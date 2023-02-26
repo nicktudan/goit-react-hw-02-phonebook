@@ -1,6 +1,6 @@
 import { Component } from 'react';
-// import { nanoid } from 'nanoid';
-import { ContactForm } from './ContactForm/FormikContactForm';
+import { nanoid } from 'nanoid';
+import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 import { GlobalStyle } from './GlobalStyle';
@@ -19,11 +19,11 @@ export class App extends Component {
     filter: '',
   };
 
-  formSubmitHandler = ({ name, number }) => {
+  addContact = ({ name, number }) => {
     // console.log(value);
 
     const newContact = {
-      // id: nanoid(),
+      id: nanoid(),
       name,
       number,
     }
@@ -34,7 +34,7 @@ export class App extends Component {
       evt.number === newContact.number
     )) ? alert(`${name} or ${number} is already in contacts.`)
       : this.setState(prevState => ({
-        contacts: [newContact, ...prevState.contacts]
+        contacts: [...prevState.contacts, newContact]
       }))
   }
 
@@ -64,7 +64,7 @@ export class App extends Component {
         <GlobalStyle />
 
         <TitlePhonebook>Phonebook</TitlePhonebook>
-        <ContactForm onSubmit={this.formSubmitHandler} />
+        <ContactForm onSubmit={this.addContact} />
 
         <TitleContacts>Contacts</TitleContacts>
         <Filter value={this.state.filter} onChange={this.changeFilter} />
@@ -74,5 +74,3 @@ export class App extends Component {
     );
   }
 }
-
-

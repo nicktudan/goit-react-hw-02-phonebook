@@ -21,7 +21,7 @@ export const ContactListItemsData = styled.span`
 export const ContactListItemsBtn = styled.button`
     font-size: 12px;
     font-weight: 600;
-    padding: 2px 8px;
+    padding: 2px 12px;
     border: 1px solid #D3D3D3;
     border-radius: 4px;
     background-color: #ffffff;
