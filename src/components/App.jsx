@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import { nanoid } from 'nanoid';
-import { ContactForm } from './ContactForm/ContactForm';
+// import { nanoid } from 'nanoid';
+import { ContactForm } from './ContactForm/FormikContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 import { GlobalStyle } from './GlobalStyle';
@@ -23,7 +23,7 @@ export class App extends Component {
     // console.log(value);
 
     const newContact = {
-      id: nanoid(),
+      // id: nanoid(),
       name,
       number,
     }
@@ -69,7 +69,7 @@ export class App extends Component {
         <TitleContacts>Contacts</TitleContacts>
         <Filter value={this.state.filter} onChange={this.changeFilter} />
         <ContactList contacts={this.getFilteredConracts()} onDelete={this.deleteContact} />
-        
+
       </Layout>
     );
   }

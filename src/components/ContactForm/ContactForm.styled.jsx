@@ -1,6 +1,11 @@
 import styled from "styled-components";
+import { 
+    Form as FormikForm,
+    Field as FormikField,
+    ErrorMessage as FormikError, 
+} from 'formik';
 
-export const Form = styled.form`
+export const Form = styled(FormikForm)`
     display: flex;
     flex-direction: column;
     margin-top: 28px;
@@ -10,7 +15,7 @@ export const Form = styled.form`
     
 `;
 
-export const Input = styled.input`
+export const Field = styled(FormikField)`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,6 +25,12 @@ export const Input = styled.input`
     border: 1px solid #D3D3D3;
     outline: none;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+    ::placeholder {
+        color: #708090;
+        font-size: 16px;
+    }
 
     :hover,
     :focus {
@@ -46,4 +57,11 @@ export const FormBtn = styled.button`
     :focus {
         background-color: #B0E0E6;
     }
+`;
+
+export const ErrorMessage = styled(FormikError)`
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-style: italic;
+    color: #DC143C;
 `;
