@@ -28,14 +28,29 @@ export class App extends Component {
       number,
     }
 
-    this.state.contacts.some(evt => (
+    // this.state.contacts.some(evt => (
+    //   (evt.name === newContact.name &&
+    //   evt.number === newContact.number) ||
+    //   evt.number === newContact.number
+    // )) ? alert(`${name} or ${number} is already in contacts.`)
+    //   : this.setState(prevState => ({
+    //     contacts: [...prevState.contacts, newContact]
+    //   }))
+
+    const isExist = this.state.contacts.some(evt => (
       (evt.name === newContact.name &&
       evt.number === newContact.number) ||
       evt.number === newContact.number
-    )) ? alert(`${name} or ${number} is already in contacts.`)
-      : this.setState(prevState => ({
-        contacts: [...prevState.contacts, newContact]
-      }))
+    ))
+
+    if(isExist) {
+      alert(`${name} or ${number} is already in contacts.`)
+      return;
+    }
+
+    this.setState(prevState => ({
+    contacts: [...prevState.contacts, newContact]
+    }))
   }
 
   changeFilter = evt => {
